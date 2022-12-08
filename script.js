@@ -10,6 +10,7 @@ let textrecording = document.getElementById("textrecording")
 let btnUpdate = document.getElementById("btnUpdate")
 let soundTrackName = document.getElementById("soundTrackName")
 var editID = -1;
+let SelectedRecord = 0
 
 let selectedTempo = 1
 
@@ -166,7 +167,9 @@ function playlist(id) {
     }, 2 * tempo * track.length - 1);
 }
 
+
 function editList(id) {
+    SelectedRecord = id
     recordingToggle.style.display = "none";
     textrecording.style.display = "none";
     composerName.className += " lebar";
@@ -195,7 +198,7 @@ function validateTrack(arr) {
 }
 
 function update() {
-    let id = editID
+    let id = SelectedRecord
     let nama = document.getElementById(`nama${id}`)
     let song = document.getElementById(`song${id}`)
     let totalTunes = document.getElementById(`track${id}`)
@@ -236,7 +239,6 @@ function update() {
     soundTrackName.style.display = "none"
 
 }
-
 
 function deleteList() {
     textrecording.innerHTML = "DELETE IN PROGRESS!"
