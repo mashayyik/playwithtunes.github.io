@@ -98,19 +98,14 @@ let recording = () => {
             recording = true
         }
 
+        return recording
     }
-    return recording
 }
 let stopRecording = () => {
     if (stopRecordingButton.click) {
         if (temp.length === 0) {
             textrecording.innerHTML = "YOU DIDNT INPUT ANYTHING"
-            setTimeout(() => {
-                textrecording.innerHTML = 'TRY AGAIN :('
-            }, 2000);
-            setTimeout(() => {
-                textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
-            }, 4000);
+            return
         }
         textrecording.innerHTML = "AWESOME TUNES!! GOOD JOB"
         setTimeout(() => {
