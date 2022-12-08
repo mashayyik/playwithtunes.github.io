@@ -27,6 +27,10 @@ let save = (tempo) => {
     }, 2000);
 }
 
+
+
+
+
 let audio = new Audio("src/1.wav");
 
 let soundtrack = []
