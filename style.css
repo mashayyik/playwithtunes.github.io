@@ -1346,6 +1346,11 @@ html {
   80% { color: blue; }
 }
 #btnUpdate{
+width: 200px;
+height: 30px;
+color: black;
+margin: 12px 10px;
+background-color: rgb(228, 228, 79);
   font-size:15px;
 }
 #soundTrackName{
@@ -1379,9 +1384,9 @@ animation: color-change2 4s infinite;
   margin: 10px 27px;
 }
 
-.labelform{;
+.labelform{
   width: 30vw;
-  margin: 0px;;;
+  margin: 0px;
 }
 .labelform2{
   width: 40vw;

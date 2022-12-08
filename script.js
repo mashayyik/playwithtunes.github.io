@@ -87,7 +87,7 @@ let recording = () => {
             }, 2000);
             recordingToggle.checked = false
         } else {
-            textrecording.innerHTML = "RECORDING ..."
+            textrecording.style.display = 'none'
             recordingTooggle.classList.add("active")
             recordingButton.classList.add("active")
             recording = true
@@ -99,9 +99,9 @@ let recording = () => {
 let stopRecording = () => {
     if (stopRecordingButton.click) {
         if (temp.length === 0) {
-            textrecording.innerHTML = "YOU DIDNT INPUT ANYTHING"
-            return
+            return textrecording.innerHTML = "YOU DIDNT INPUT ANYTHING"
         }
+        textrecording.style.display = 'block'
         textrecording.innerHTML = "AWESOME TUNES!! GOOD JOB"
         setTimeout(() => {
             textrecording.innerHTML = 'SAVING'
@@ -195,39 +195,29 @@ function validateTrack(arr) {
 }
 
 function update() {
-    let id = editID - 1
+    let id = editID
     let nama = document.getElementById(`nama${id}`)
     let song = document.getElementById(`song${id}`)
     let totalTunes = document.getElementById(`track${id}`)
     let newArr = (soundTrackName.value).split(",")
     newArr = validateTrack(newArr)
     soundtrack[id] = newArr
-    if (nama.textContent === composerName.value && nama.textContent === composerName.value && `${soundtrack[id].length} Tunes` === totalTunes.textContent) {
-        textrecording.innerHTML = "YOU NOT CHANGE DATA ANYTHING"
-        nama.style.color = "red"
-        song.style.color = "red"
-        totalTunes.style.color = "red"
+    textrecording.innerHTML = "AWESOME !!"
+    setTimeout(() => {
+        textrecording.innerHTML = 'Updating Data ..'
+    }, 2000);
+    setTimeout(() => {
+        textrecording.innerHTML = 'Your data has been changed'
+        nama.textContent = composerName.value
+        song.textContent = songName.value
+        totalTunes.textContent = `${soundtrack[id].length} Tunes`
+        nama.style.color = "green"
         nama.style.fontSize = "x-large"
         song.style.fontSize = "x-large"
-        totalTunes.style.fontSize = "x-large"
-    } else {
-        textrecording.innerHTML = "AWESOME !!"
-        setTimeout(() => {
-            textrecording.innerHTML = 'Updating Data ..'
-        }, 2000);
-        setTimeout(() => {
-            textrecording.innerHTML = 'Your data has been changed'
-            nama.textContent = composerName.value
-            song.textContent = songName.value
-            totalTunes.textContent = `${soundtrack[id].length} Tunes`
-            nama.style.color = "green"
-            nama.style.fontSize = "x-large"
-            song.style.fontSize = "x-large"
-            song.style.fontSize = "x-large"
-            song.style.color = "green"
-            totalTunes.style.color = "green"
-        }, 4000);
-    }
+        song.style.fontSize = "x-large"
+        song.style.color = "green"
+        totalTunes.style.color = "green"
+    }, 4000);
     setTimeout(() => {
         nama.style.fontSize = "large"
         song.style.fontSize = "large"
@@ -237,13 +227,14 @@ function update() {
         totalTunes.style.color = "black"
         textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
     }, 7000)
-    recordingToggle.style.display = "block"
     textrecording.style.display = "block"
     composerName.remove = "lebar";
     songName.style.remove = "lebar";
     soundTrackName.style.remove = "lebar";
     btnUpdate.style.display = "none"
     soundTrackName.style.display = "none"
+    composerName.value = ""
+    songName.value = ""
 }
 
 
