@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="emerald">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">>
+    <title>PLAY WITH TUNES!</title>
+</head>
+
+<body class="">
+    <div class="tempo-container container flex justify-center items-center mx-auto mt-10">
+        <h1>SELECT TEMPO</h1>
+    </div>
+    <div class="tempo-container container flex justify-center items-center mx-auto mt-2">
+        <p class="mx-4">1/4</p>
+        <p class="mx-4">2/4</p>
+        <p class="mx-4">3/4</p>
+        <p class="mx-4">4/4</p>
+    </div>
+    <div class="container radio-container flex justify-center items-center mx-auto mt-2">
+        <input type="radio" name="tempo" value="4" class="radio radio-success mx-4" checked />
+        <input type="radio" name="tempo" value="3" class="radio radio-success mx-4" />
+        <input type="radio" name="tempo" value="2" class="radio radio-success mx-4" />
+        <input type="radio" name="tempo" value="1" class="radio radio-success mx-4" />
+    </div>
+    <div class="container flex justify-center items-center mx-auto mt-2">
+        <button class="btn btn-xs" id="btnSave">SAVE</button>
+    </div>
+
+    <div class="container mx-auto ">
+        <div class="bg-slate-800 w-[50%] border rounded-xl p-9 mx-auto mt-5 items-center shadow-xl">
+            <header>
+                <div class="text-slate-50 text-3xl flex justify-center items-center select-none">PLAY WITH TUNES!</div>
+                <div class="text-slate-50 text-1xl flex justify-center items-center select-none">Hackaton batch 032
+                </div>
+            </header>
+            <ul class="main-key text-slate-50 flex mt-2 relative select-none">
+                <li class="key" data-key="1"><span>1</span></li>
+                <li class="key" data-key="2"><span>2</span></li>
+                <li class="key" data-key="3"><span>3</span></li>
+                <li class="key" data-key="4"><span>4</span></li>
+                <li class="key" data-key="5"><span>5</span></li>
+                <li class="key" data-key="6"><span>6</span></li>
+                <li class="key" data-key="7"><span>7</span></li>
+                <li class="key" data-key="8"><span>8</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container flex justify-center mx-auto items-center mt-5">
+        <div class="form-control">
+            <label class="input-group input-group-md">
+                <span>Your Name</span>
+                <input type="text" id="composerName" placeholder="input your name as composer"
+                    class="input input-bordered input-md w-[300px] shadow-xl" />
+            </label>
+            <label class="input-group input-group-md mt-2">
+                <span>Song Titles</span>
+                <input type="text" id="songName" placeholder="input your best song title"
+                    class="input input-bordered input-md w-[300px] shadow-xl" />
+            </label>
+            <input type="text" id="soundTrackName" class="input input-bordered input-md w-[300px] shadow-xl"
+                style="display:none ;" />
+            </label>
+        </div>
+    </div>
+    <div class="container flex justify-center items-center mx-auto mt-2">
+        <button class="btn btn-xs btnUpdate" id="btnUpdate" onclick="update()" style="display:none">UPDATE</button>
+    </div>
+
+    <div class="container flex justify-center items-center mt-5 mx-auto">
+        <input type="checkbox" class="toggle toggle-accent recordingTooggle" id="recordingToggle"
+            onchange="recording()" />
+        <button class="btn btn-warning recordingButton" id="stopRecordingButton" onclick="stopRecording()">STOP
+            RECORDING</button>
+    </div>
+    <div class="container flex justify-center items-center mx-auto mt-2">
+        <h1 id="textrecording">CLICK HERE START RECORDING</h1>
+    </div>
+
+    <div class="recordingList">
+        <ul id="recordingList" class="" style="display:none">
+            <li class="table-li bg-slate-900 text-slate-100 py-5">
+                <div class="table-head">COMPOSER</div>
+                <div class="table-head">SONG</div>
+                <div class="table-head">TOTAL TUNES</div>
+                <div class="table-head">PLAY</div>
+                <div class="table-head">EDIT</div>
+                <div class="table-head">DELETE</div>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
