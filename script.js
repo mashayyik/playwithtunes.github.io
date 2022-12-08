@@ -217,7 +217,9 @@ function update() {
         song.style.fontSize = "x-large"
         song.style.color = "green"
         totalTunes.style.color = "green"
-    }, 4000);
+        composerName.className = "input input-bordered input-md w-[300px] shadow-xl labelform"
+        songName.className = "input input-bordered input-md w-[300px] shadow-xl labelform"
+    }, 3000);
     setTimeout(() => {
         nama.style.fontSize = "large"
         song.style.fontSize = "large"
@@ -226,15 +228,13 @@ function update() {
         song.style.color = "black"
         totalTunes.style.color = "black"
         textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
-    }, 7000)
+        composerName.value = ""
+        songName.value = ""
+    }, 5000)
     textrecording.style.display = "block"
-    composerName.remove = "lebar";
-    songName.style.remove = "lebar";
-    soundTrackName.style.remove = "lebar";
     btnUpdate.style.display = "none"
     soundTrackName.style.display = "none"
-    composerName.value = ""
-    songName.value = ""
+
 }
 
 
@@ -243,10 +243,10 @@ function deleteList() {
     setTimeout(() => {
         this.parentNode.remove()
         textrecording.innerHTML = 'Your Data Has Been Deleted.'
-    }, 2000);
+    }, 1000);
     setTimeout(() => {
         textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
-    }, 4000);
+    }, 3000);
 }
 
 let sound = (key) => {
