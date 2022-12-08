@@ -11,7 +11,8 @@ let btnUpdate = document.getElementById("btnUpdate")
 let soundTrackName = document.getElementById("soundTrackName")
 let editID = -1;
 
-let selectedTempo = 4
+let selectedTempo = 1
+
 let id = 0
 
 const btn = document.querySelector('#btnSave');
@@ -19,8 +20,21 @@ const tempoButtons = document.querySelectorAll('input[name="tempo"]');
 btn.addEventListener("click", () => {
     for (const tempoButton of tempoButtons) {
         if (tempoButton.checked) {
-            selectedTempo = tempoButton.value;
-            break;
+            console.log(tempoButton.value)
+            switch (tempoButton.value) {
+                case '1':
+                    selectedTempo = 4;
+                    break;
+                case '2':
+                    selectedTempo = 3;
+                    break;
+                case '3':
+                    selectedTempo = 2;
+                    break;
+                case '4':
+                    selectedTempo = 1;
+                    break;
+            }
         }
     }
     textrecording.innerHTML = "Success! Tempo has been changed"
@@ -152,20 +166,21 @@ let stopRecording = () => {
 
 function playlist(id) {
     let playID = id - 1
-    console.log(playID, soundtrack, soundtrack[playID])
     let tempo = selectedTempo * 250
     let track = soundtrack[playID]
-    textrecording.innerHTML = "PLaying ..."
     for (let i = 0; i < track.length; i++) {
         const perNada = track[i];
         setTimeout(function () {
             sound(perNada)
         }, tempo * i);
     }
+    textrecording.innerHTML = 'PLaying ...'
     setTimeout(() => {
         textrecording.innerHTML = 'WOW, AWESOME INTRUMENTAL !!!'
-    }, 1.5 * tempo * track.length + 2);
-    textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
+    }, tempo * track.length - 1);
+    setTimeout(() => {
+        textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
+    }, 2 * tempo * track.length - 1);
 }
 
 function editList(id) {
