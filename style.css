@@ -1279,7 +1279,7 @@ html {
 #textrecording{
   font-size: x-large;
   color: black;
-  animation: color-change 1s infinite;;
+  animation: color-change 1s infinite;
 }
 
 #stopRecordingButton{
@@ -1289,6 +1289,7 @@ html {
   background-color: rgb(164, 1, 1);
   color: white;
   animation: scale-border 1s steps(300, end) infinite;
+  box-shadow: inset;
 }
 
 #btnSave{
@@ -1333,4 +1334,17 @@ html {
 #soundTrackName{
   margin-top: 1em;
   width: 30em;
+}
+.head-of-device{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.head-of-device2{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+animation: color-change2 4s infinite;
+}
+
+@keyframes color-change2 {
+  0% { color: rgb(255, 255, 255); }
+  50% { color: rgb(74, 74, 74); }
+  100% { color:rgb(255, 255, 255)e; }
 }

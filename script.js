@@ -138,7 +138,7 @@ let stopRecording = () => {
         li.appendChild(liText2)
         li.appendChild(liText3)
         id++
-        li.innerHTML += `<button onclick="playlist()">PLAY</button>`
+        li.innerHTML += `<button onclick="playlist(${id})">PLAY</button>`
         li.innerHTML += `<button onclick="editList(${id})">EDIT</button>`
         let deleteButton = document.createElement("button");
         deleteButton.innerHTML = "DELETE"
@@ -150,8 +150,9 @@ let stopRecording = () => {
     }
 }
 
-function playlist() {
+function playlist(id) {
     let playID = id - 1
+    console.log(playID, soundtrack, soundtrack[playID])
     let tempo = selectedTempo * 250
     let track = soundtrack[playID]
     textrecording.innerHTML = "PLaying ..."
