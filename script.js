@@ -19,7 +19,9 @@ let id = 0
 const tempoButtons = document.querySelectorAll('input[name="tempo"]');
 let save = (tempo) => {
     selectedTempo = tempo
-    textrecording.innerHTML = "Success! Tempo has been changed"
+    setTimeout(() => {
+        textrecording.innerHTML = "Success! Tempo has been changed"
+    }, 1000);
     setTimeout(() => {
         textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
     }, 2000);
