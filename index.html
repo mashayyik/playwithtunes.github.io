@@ -14,6 +14,12 @@
     <div class="container flex justify-center items-center mx-auto mt-2">
         <h1 class="head-of-device">SELECT TEMPO</h1>
     </div>
+    <div class="container radio-container flex justify-center items-center mx-auto mt-2">
+        <input type="radio" name="tempo" value="1" id="tempo1" class="radio-tempo radio radio-success mx-4" />
+        <input type="radio" name="tempo" value="2" id="tempo2" class="radio-tempo radio radio-success mx-4" />
+        <input type="radio" name="tempo" value="3" id="tempo3" class="radio-tempo radio radio-success mx-4" />
+        <input type="radio" name="tempo" value="4" id="tempo4" class="radio-tempo radio radio-success mx-4" checked />
+    </div>
     <div class="tempo-container container flex justify-center items-center mx-auto mt-2 ">
         <label for="tempo1" onclick="save(4)" class="mx-4 label-tempo">1/4</label>
         <label for="tempo2" onclick="save(3)" class="mx-4 label-tempo">2/4</label>
@@ -22,12 +28,7 @@
     </div>
 </div>
 
-<div class="container radio-container flex justify-center items-center mx-auto mt-2">
-    <input type="radio" name="tempo" value="1" id="tempo1" class="radio-tempo radio radio-success mx-4" />
-    <input type="radio" name="tempo" value="2" id="tempo2" class="radio-tempo radio radio-success mx-4" />
-    <input type="radio" name="tempo" value="3" id="tempo3" class="radio-tempo radio radio-success mx-4" />
-    <input type="radio" name="tempo" value="4" id="tempo4" class="radio-tempo radio radio-success mx-4" checked />
-</div>
+
 
 <div class="container mx-auto ">
     <div class="keyboard w-[50%] border rounded-xl p-9 mx-auto mt-2 items-center shadow-xl">
