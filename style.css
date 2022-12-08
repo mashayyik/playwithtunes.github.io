@@ -27,7 +27,7 @@ html {
 
 [data-theme=emerald] {
   color-scheme: light;
-  background-image: linear-gradient(rgb(74, 147, 192), rgba(0, 0, 0, 0.5)), url("./src/background.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("./src/background.jpeg");
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -295,7 +295,6 @@ html {
 .input-group {
   display: flex;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 20px;
   align-items: stretch;
@@ -1278,7 +1277,7 @@ html {
 #textrecording{
   font-size: 20px;
   color: rgb(246, 255, 0);
-  background-color: rgba(245, 245, 245, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 10px;
   border-radius: 10px;
   animation: color-change 1s infinite;
@@ -1363,7 +1362,7 @@ animation: color-change2 4s infinite;
 
 
 .label-tempo{
-  background-color: red;
+  background-color: rgb(224, 40, 23);
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
@@ -1380,13 +1379,14 @@ animation: color-change2 4s infinite;
   margin: 10px 27px;
 }
 
-.labelform{
+.labelform{;
   width: 30vw;
-  margin: 0px;;
+  margin: 0px;;;
 }
 .labelform2{
   width: 40vw;
 }
+
 .lebar{
     color: black;
 		padding: 10px;
@@ -1400,16 +1400,24 @@ animation: color-change2 4s infinite;
   text-align: center;
   width: 120px;
   color: white;
-  background-color: rgb(156, 28, 173);
+  background-color: rgba(214, 81, 9, 0.807);
   margin: 0px;
 }
 @keyframes color-change2 {
-  0% { color: rgb(255, 255, 255); }
+  0% { color: rgb(249, 162, 0); }
   50% { color: rgb(217, 255, 0); }
-  100% { color:rgb(255, 255, 255)e; }
+  100% { color:rgb(255, 149, 0)e; }
 }
 @keyframes blinkingBackground{
   0%		{ background-color: #ececec;}
   50%		{ background-color: #f1f73a;}
   100%	{ background-color: #f4f4f4;}
+}
+
+.keyboard{
+  background-image: linear-gradient(rgba(130, 65, 22, 0.5), rgba(0, 0, 0, 0.7)), url("./src/backgroundkeyboard.jpeg");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 10px 20px rgba(0, 0, 0, 0.6);
 }
