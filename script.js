@@ -207,6 +207,9 @@ function update() {
     soundtrack[id] = newArr
     textrecording.innerHTML = "AWESOME !!"
     setTimeout(() => {
+        nama.style.color = "red"
+        song.style.color = "red"
+        totalTunes.style.color = "red"
         textrecording.innerHTML = 'Updating Data ..'
     }, 2000);
     setTimeout(() => {
@@ -214,12 +217,6 @@ function update() {
         nama.textContent = composerName.value
         song.textContent = songName.value
         totalTunes.textContent = `${soundtrack[id].length} Tunes`
-        nama.style.color = "green"
-        nama.style.fontSize = "x-large"
-        song.style.fontSize = "x-large"
-        song.style.fontSize = "x-large"
-        song.style.color = "green"
-        totalTunes.style.color = "green"
         composerName.className = "input input-bordered input-md w-[300px] shadow-xl labelform"
         songName.className = "input input-bordered input-md w-[300px] shadow-xl labelform"
     }, 3000);
@@ -227,9 +224,9 @@ function update() {
         nama.style.fontSize = "large"
         song.style.fontSize = "large"
         totalTunes.style.fontSize = "large"
-        nama.style.color = "black"
-        song.style.color = "black"
-        totalTunes.style.color = "black"
+        nama.style.color = "white"
+        song.style.color = "white"
+        totalTunes.style.color = "white"
         textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
         composerName.value = ""
         songName.value = ""
