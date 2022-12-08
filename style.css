@@ -20,16 +20,14 @@
 
 html {
   line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-feature-settings: normal;
 }
 
+
 [data-theme=emerald] {
   color-scheme: light;
-  background-image: linear-gradient(rgb(4, 33, 42), rgba(0, 0, 0, 0)), url("./src/background.jpeg");
+  background-image: linear-gradient(rgb(74, 147, 192), rgba(0, 0, 0, 0.5)), url("./src/background.jpeg");
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -254,6 +252,10 @@ html {
 .form-control {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .label {
@@ -293,6 +295,9 @@ html {
 .input-group {
   display: flex;
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
   align-items: stretch;
 }
 
@@ -306,11 +311,6 @@ html {
   border-radius: 0px;
 }
 
-.input-group-md {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  line-height: 2;
-}
 
 .input-group-lg {
   font-size: 1.125rem;
@@ -980,7 +980,7 @@ html {
 }
 
 .mt-5 {
-  margin-top: 1.25rem;
+  margin-top: 2px;
 }
 
 .mt-6 {
@@ -988,7 +988,7 @@ html {
 }
 
 .mt-2 {
-  margin-top: 0.5rem;
+  margin-top: 15px;
 }
 
 .mt-56 {
@@ -1169,6 +1169,7 @@ html {
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
 *,html,body{
   margin: 0px;
   padding: 0px;
@@ -1275,15 +1276,28 @@ html {
 }
 
 #textrecording{
-  font-size: x-large;
-  color: black;
+  font-size: 20px;
+  color: rgb(246, 255, 0);
+  background-color: rgba(245, 245, 245, 0.5);
+  padding: 10px;
+  border-radius: 10px;
   animation: color-change 1s infinite;
+  transition: 0.5s ease-in-out;
+  box-shadow: inset;
+}
+#textrecording:hover{
+  transition-delay: 0.1s;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255, 80%);
+  animation: color-change 0.2s infinite;
+  cursor: pointer;
 }
 
 #stopRecordingButton{
   top: 50%;
   left: 50%;
-  font-size: 18px;
+  font-size: 15px;
   background-color: rgb(164, 1, 1);
   color: white;
   animation: scale-border 1s steps(300, end) infinite;
@@ -1292,8 +1306,14 @@ html {
 
 #btnSave{
   font-size: 20px;
-  width: 40px;
-  height: 20px;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: black;
+  background-color: rgb(240, 236, 119);
+  cursor: pointer;
+
 }
 
 @keyframes scale-div {
@@ -1341,8 +1361,55 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 animation: color-change2 4s infinite;
 }
 
+
+.label-tempo{
+  background-color: red;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+.label-tempo:hover{
+  background-color: rgb(187, 5, 5);
+}
+
+.label-tempo:active{
+  background-color: rgb(246, 255, 0);
+}
+
+.radio-tempo {
+  margin: 10px 27px;
+}
+
+.labelform{
+  width: 30vw;
+  margin: 0px;;
+}
+.labelform2{
+  width: 40vw;
+}
+.lebar{
+    color: black;
+		padding: 10px;
+		display: inline-block;
+		border-radius: 5px;
+		animation: blinkingBackground 2s infinite;
+}
+
+.span-name{
+  font-size: 14px;
+  text-align: center;
+  width: 120px;
+  color: white;
+  background-color: rgb(156, 28, 173);
+  margin: 0px;
+}
 @keyframes color-change2 {
   0% { color: rgb(255, 255, 255); }
   50% { color: rgb(217, 255, 0); }
   100% { color:rgb(255, 255, 255)e; }
+}
+@keyframes blinkingBackground{
+  0%		{ background-color: #ececec;}
+  50%		{ background-color: #f1f73a;}
+  100%	{ background-color: #f4f4f4;}
 }

@@ -9,39 +9,20 @@ let composerName = document.getElementById("composerName")
 let textrecording = document.getElementById("textrecording")
 let btnUpdate = document.getElementById("btnUpdate")
 let soundTrackName = document.getElementById("soundTrackName")
-let editID = -1;
+var editID = -1;
 
 let selectedTempo = 1
 
 let id = 0
 
-const btn = document.querySelector('#btnSave');
 const tempoButtons = document.querySelectorAll('input[name="tempo"]');
-btn.addEventListener("click", () => {
-    for (const tempoButton of tempoButtons) {
-        if (tempoButton.checked) {
-            console.log(tempoButton.value)
-            switch (tempoButton.value) {
-                case '1':
-                    selectedTempo = 4;
-                    break;
-                case '2':
-                    selectedTempo = 3;
-                    break;
-                case '3':
-                    selectedTempo = 2;
-                    break;
-                case '4':
-                    selectedTempo = 1;
-                    break;
-            }
-        }
-    }
+let save = (tempo) => {
+    selectedTempo = tempo
     textrecording.innerHTML = "Success! Tempo has been changed"
     setTimeout(() => {
         textrecording.innerHTML = 'CLICK HERE TO START RECORDING'
     }, 2000);
-});
+}
 
 let audio = new Audio("src/1.wav");
 
@@ -151,7 +132,6 @@ let stopRecording = () => {
         li.appendChild(liText1)
         li.appendChild(liText2)
         li.appendChild(liText3)
-        id++
         li.innerHTML += `<button onclick="playlist(${id})">PLAY</button>`
         li.innerHTML += `<button onclick="editList(${id})">EDIT</button>`
         let deleteButton = document.createElement("button");
@@ -161,20 +141,23 @@ let stopRecording = () => {
         li.classList.add("li-playlist")
         recordingList.style.display = "block"
         recordingList.appendChild(li)
+        composerName.value = ""
+        songName.value = ""
+        editID = id
+        id++
     }
 }
 
 function playlist(id) {
-    let playID = id - 1
     let tempo = selectedTempo * 250
-    let track = soundtrack[playID]
+    let track = soundtrack[id]
     for (let i = 0; i < track.length; i++) {
         const perNada = track[i];
         setTimeout(function () {
             sound(perNada)
         }, tempo * i);
     }
-    textrecording.innerHTML = 'PLaying ...'
+    textrecording.innerHTML = 'Playing ...'
     setTimeout(() => {
         textrecording.innerHTML = 'WOW, AWESOME INTRUMENTAL !!!'
     }, tempo * track.length - 1);
@@ -186,16 +169,14 @@ function playlist(id) {
 function editList(id) {
     recordingToggle.style.display = "none";
     textrecording.style.display = "none";
-    composerName.style.transform = 'scale(2,1)';
-    songName.style.transform = 'scale(2,1)'
-    soundTrackName.style.transform = 'scale(2,1)'
+    composerName.className += " lebar";
+    songName.className += " lebar";
     composerName.focus()
-    editID = id - 1
     soundTrackName.style.display = "block";
     btnUpdate.style.display = "block"
     let nama = document.getElementById(`nama${id}`)
     let song = document.getElementById(`song${id}`)
-    let track = soundtrack[editID]
+    let track = soundtrack[id]
     soundTrackName.value = track
     composerName.value = nama.innerText
     songName.value = song.innerText
@@ -214,7 +195,7 @@ function validateTrack(arr) {
 }
 
 function update() {
-    let id = editID
+    let id = editID - 1
     let nama = document.getElementById(`nama${id}`)
     let song = document.getElementById(`song${id}`)
     let totalTunes = document.getElementById(`track${id}`)
@@ -258,8 +239,9 @@ function update() {
     }, 7000)
     recordingToggle.style.display = "block"
     textrecording.style.display = "block"
-    composerName.style.transform = "scale(1,1)"
-    songName.style.transform = "scale(1,1)"
+    composerName.remove = "lebar";
+    songName.style.remove = "lebar";
+    soundTrackName.style.remove = "lebar";
     btnUpdate.style.display = "none"
     soundTrackName.style.display = "none"
 }
