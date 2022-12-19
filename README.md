@@ -1,6 +1,6 @@
 # PlayWithTunes!
 
-## entertainment media app (music concept) project
+## Overview
 https://mashayyik.github.io/playwithtunes.github.io/
 
 
